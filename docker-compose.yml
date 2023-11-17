@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  item-app:
+    image: mabouya/item-app:v1  # Ganti dengan nama dan versi image yang sesuai
+    ports:
+      - "80:8080"
+    depends_on:
+      - item-db
+    restart: always  # Kebijakan restart, diatur sebagai "always"
+
+  item-db:
+    image: mongo:3
+    volumes:
+      - app-db:/data/db
+    restart: always  # Kebijakan restart, diatur sebagai "always"
+
+volumes:
+  app-db:
