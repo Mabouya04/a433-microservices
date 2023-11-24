@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Build Docker image for frontend
-docker build -t mabouya/karsajobs-ui:latest -f Dockerfile .
+# Perintah untuk build Docker image
+docker build -t mabouya/karsajobs:latest .
 
-# Login to Docker Hub
-echo "Mabouya00004" | docker login -u mabouya --password-stdin
+# Perintah untuk login ke Docker Hub
+docker login -u mabouya -p Mabouya00004
 
-# Push the image to Docker Hub
-docker push mabouya/karsajobs-ui:latest
+# Perintah untuk push image ke Docker Hub
+docker push mabouya/karsajobs:latest
